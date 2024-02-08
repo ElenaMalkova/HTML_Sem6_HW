@@ -176,7 +176,7 @@ $o-i_height: 245px;
   }
 
   &:nth-child(4) {
-    height: $o-i_height * 0.67;
+    height: 180px;
     background-image: url("../img/4-ACCESORIES.png");
     grid-column: 1 / -1;
   }
@@ -194,12 +194,14 @@ $o-i_height: 245px;
   width: 100%;
   background: rgba(33, 22, 22, 0.7);
   z-index: 1;
+
   h2 {
     color: #fff;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
     span {
       color: #F16D7F;
       font-size: 24px;
@@ -210,16 +212,82 @@ $o-i_height: 245px;
   }
 }
 
+.goods {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, $max__offer-cols));
+  column-gap: 30px;
+  row-gap: 30px;
+  padding-bottom: 110px;
+}
+
+.goods__item {
+  display: flex;
+  flex-direction: column;
+  /* Заголовок раздела с каталогом товаров*/
+  &:first-child {
+    grid-column: 1 / -1;
+    align-items: center;
+
+    h3 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 36px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 17px;
+      text-align: center;
+      padding: 6px 0 18px;
+    }
+  ;
+  }
+
+  figure {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    background-color: hsla(0, 0%, 97%, 1);
+
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      padding: 24px 16px 20px;
+
+      h3 {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 16px;
+        text-align: left;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        text-align: left;
+        padding: 12px 0 0;
+      }
+
+      .price {
+        color: hsla(352, 83%, 69%, 1);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        text-align: left;
+
+      }
+    }
+  }
+}
+
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
   $max-column-count: 2;
-
-  @for $i from 1 through $max-column-count {
-    .f-i__item:nth-child(#{$max-column-count}n + #{$i}) {
-      grid-column: $i;
-    }
-  }
 
   .center {
     padding-left: calc(50% - 376px);
@@ -261,11 +329,17 @@ $o-i_height: 245px;
     height: $o-i_height;
 
     &:nth-child(4) {
-      height: $o-i_height * 0.67;
+      height: 116px;
     }
   }
-}
 
+  .goods {
+    grid-template-columns: repeat(2, minmax(300px, 360px));
+    column-gap: 16px;
+    row-gap: 16px;
+    padding-bottom: 110px;
+  }
+}
 
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -314,5 +388,10 @@ $o-i_height: 245px;
     &:nth-child(4) {
       height: 111px;
     }
+  }
+  .goods {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    padding-bottom: 110px;
   }
 }
