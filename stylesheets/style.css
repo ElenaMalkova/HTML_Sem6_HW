@@ -10,11 +10,28 @@ a {
 
 body {
   font-family: "Lato", sans-serif;
+  padding: 0 0 10vh 0;
 }
 
 .center {
   padding-left: calc(50% - 570px);
   padding-right: calc(50% - 570px);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 212px;
+  height: 48px;
+  border: 1px solid hsl(0, 100%, 71%);
+  background: none;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: hsl(0, 100%, 71%);
 }
 
 /*Класс для создания ссылок поверх ДИВов*/
@@ -199,7 +216,7 @@ body {
   grid-template-columns: repeat(3, minmax(300px, 360px));
   column-gap: 30px;
   row-gap: 30px;
-  padding-bottom: 110px;
+  padding-bottom: 48px;
 }
 
 .goods__item {
@@ -297,7 +314,7 @@ body {
     grid-template-columns: repeat(2, minmax(300px, 360px));
     column-gap: 16px;
     row-gap: 16px;
-    padding-bottom: 110px;
+    padding-bottom: 32px;
   }
 }
 @media (min-width: 320px) and (max-width: 767px) {
@@ -342,7 +359,7 @@ body {
   .goods {
     grid-template-columns: 1fr;
     row-gap: 16px;
-    padding-bottom: 110px;
+    padding-bottom: 40px;
   }
 }
 
